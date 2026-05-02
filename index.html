@@ -711,11 +711,14 @@
     }
 
     .review-card {
-  border: 1px solid #BFE6F1; /* slightly stronger */
+  border: 1px solid #BFE6F1;
+}
 
-    .review-stars { color: var(--brand-yellow); font-size: 15px; margin-bottom: 8px; }
-    .review-title { font-weight: 800; font-size: 16px; margin-bottom: 8px; color: var(--text-dark); }
-    .review-body { font-size: 14px; color: var(--text-mid); line-height: 1.6; margin-bottom: 12px; }
+.review-stars {
+  color: var(--brand-yellow);
+  font-size: 15px;
+  margin-bottom: 8px;
+}
 
     .review-author {
       font-size: 12px;
@@ -1226,10 +1229,35 @@ body {
 }
 
 /* FORCE STAR COLOR */
-.stars {
+.offer-block .stars {
   color: #F4A300 !important;
-  font-size: 16px;
-  let
+  font-size: 16px !important;
+  letter-spacing: 2px !important;
+  font-weight: 800 !important;
+}
+
+/* CTA REVIEW SPACING FIX */
+.offer-block .mini-reviews {
+  margin-top: 28px !important;
+  margin-bottom: 28px !important;
+}
+
+/* CTA stays full width */
+.mid-offer-btn {
+  width: 100%;
+  display: block;
+}
+
+/* GREY BOX — centered and smaller */
+.mid-offer-meta {
+  display: block;
+  width: fit-content;
+  max-width: 85%;
+  margin: 12px auto 10px;
+  padding: 12px 18px;
+  border-radius: 10px;
+  text-align: center;
+}
   </style>
 </head>
 
@@ -1440,7 +1468,7 @@ body {
       </div>
       <div class="reason-content">
         <div class="reason-number">Reason 6</div>
-        <h2 class="reason-headline">30 seconds is easy enought to do every day</h2>
+        <h2 class="reason-headline">30 seconds is easy enough to do every day</h2>
         <div class="reason-body">
           <p>Brushing sessions that take 10 minutes and end in a fight get skipped. And skipped sessions are why the buildup comes back. A routine you'll actually do every day beats a thorough one you do twice a month. FreshWipes make it easy.</p>
         </div>

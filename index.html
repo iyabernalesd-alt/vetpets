@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>7 Reasons Dog Owners Are Switching to Anti-Bacterial Finger Wipes — VetPets</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   {{ content_for_header }}
 
   <style>
@@ -1257,6 +1257,21 @@ body {
   padding: 12px 18px;
   border-radius: 10px;
   text-align: center;
+}
+
+/* CLEAN CTA PULSE (no text movement) */
+@keyframes ctaPulse {
+  0% { box-shadow: 0 0 0 rgba(19,182,181, 0); }
+  50% { box-shadow: 0 8px 22px rgba(19,182,181, 0.35); }
+  100% { box-shadow: 0 0 0 rgba(19,182,181, 0); }
+}
+
+.mid-offer-btn {
+  animation: ctaPulse 2.8s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+.mid-offer-btn:hover {
+  animation: none;
 }
   </style>
 </head>

@@ -710,6 +710,9 @@
       justify-content: space-between;
     }
 
+    .review-card {
+  border: 1px solid #BFE6F1; /* slightly stronger */
+
     .review-stars { color: var(--brand-yellow); font-size: 15px; margin-bottom: 8px; }
     .review-title { font-weight: 800; font-size: 16px; margin-bottom: 8px; color: var(--text-dark); }
     .review-body { font-size: 14px; color: var(--text-mid); line-height: 1.6; margin-bottom: 12px; }
@@ -1221,6 +1224,12 @@ body {
   line-height: 1;
   margin-top: 3px;
 }
+
+/* FORCE STAR COLOR */
+.stars {
+  color: #F4A300 !important;
+  font-size: 16px;
+  let
   </style>
 </head>
 
@@ -1492,8 +1501,8 @@ body {
     </div>
     <a href="https://shopvetpets.com/products/freshwipes-kit-protects-against-dental-diseases" class="btn-cta">Check Availability →</a>
     <div class="mini-reviews">
-  <p>“No more fighting with my dog every night.” ⭐⭐⭐⭐⭐</p>
-  <p>“I actually saw buildup on the wipe — it works.” ⭐⭐⭐⭐⭐</p>
+  <p>“No more fighting with my dog every night.” <span class="stars">★★★★★</span></p>
+  <p>“I actually saw buildup on the wipe — it works.” <span class="stars">★★★★★</span></p>
 </div>
     <div class="stock-note">Stock Alert: <strong>Running Low</strong> — This deal ends when inventory does.</div>
   </div>
@@ -1505,7 +1514,7 @@ body {
       <div class="rating-summary">
         <span class="rating-stars">★★★★★</span>
         <span class="rating-score">4.9</span>
-        <span class="rating-count">Based on 3,200+ reviews</span>
+        <span class="rating-count">Based on 3,200+  verified reviews</span>
       </div>
 
       <div class="reviews-grid">

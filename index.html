@@ -1096,99 +1096,6 @@ body {
   margin-top: 2px;
 }
 
-/* FIX COMPARISON TABLE MOBILE */
-@media (max-width: 768px) {
-
-  .comparison-table {
-    width: 100% !important;
-    min-width: 0 !important;
-    table-layout: fixed !important;
-    font-size: 10px !important;
-  }
-
-  .comparison-table-wrapper {
-    overflow-x: hidden !important;
-  }
-
-  .comparison-table th,
-  .comparison-table td {
-    font-size: 10px !important;
-    padding: 8px 4px !important;
-    word-break: break-word !important;
-    line-height: 1.25 !important;
-    text-align: center !important;
-  }
-
-  .comparison-table td.row-label {
-    font-size: 10px !important;
-    text-align: left !important;
-    padding-left: 4px !important;
-  }
-
-  .row-label-inner {
-    gap: 4px !important;
-  }
-
-  .comparison-table th {
-    height: auto !important;
-    min-height: 0 !important;
-    vertical-align: middle !important;
-    padding-top: 10px !important;
-    padding-bottom: 10px !important;
-  }
-
-  .comparison-table th.col-product,
-  .comparison-table th.col-competitor {
-    height: auto !important;
-    min-height: 0 !important;
-  }
-
-  .comparison-table thead {
-    height: auto !important;
-  }
-
-  .comparison-table th.col-product {
-    display: table-cell !important;
-    height: auto !important;
-    vertical-align: middle !important;
-    padding: 12px 6px !important;
-  }
-
-  .comparison-table th.col-product div {
-    display: block !important;
-  }
-
-  .icon-check,
-  .icon-cross,
-  .icon-neutral {
-    width: 16px !important;
-    height: 16px !important;
-    min-width: 16px !important;
-    font-size: 10px !important;
-    margin-right: 4px !important;
-  }
-}
-
-  /* ICON FIX */
-  .icon-check,
-  .icon-cross,
-  .icon-neutral {
-    width: 18px !important;
-    height: 18px !important;
-    font-size: 10px !important;
-  }
-
-  /* PREVENT COLUMN COLLAPSE */
-  .comparison-table th.col-product {
-    font-size: 12px !important;
-  }
-
-  /* FIX HEADER TEXT WRAP */
-  .comparison-table th {
-    white-space: normal !important;
-  }
-}
-
 /* FINAL MOBILE COMPARISON TABLE FIX - OLD CODE STYLE */
 @media (max-width: 768px) {
   .comparison-section {
@@ -1211,6 +1118,7 @@ body {
 
   .comparison-table thead {
     display: table-header-group !important;
+    height: auto !important;
   }
 
   .comparison-table th,
@@ -1239,6 +1147,15 @@ body {
     border-radius: 8px 8px 0 0 !important;
   }
 
+  .comparison-table th.col-product .table-logo {
+    max-width: 72px !important;
+    max-height: 24px !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain !important;
+    margin: 0 auto 4px !important;
+  }
+
   .comparison-table td.row-label {
     font-size: 10px !important;
     white-space: normal !important;
@@ -1250,11 +1167,6 @@ body {
     gap: 4px !important;
   }
 
-  .table-logo {
-    max-width: 72px !important;
-    margin: 0 auto 4px !important;
-  }
-
   .icon-check,
   .icon-cross,
   .icon-neutral {
@@ -1264,6 +1176,50 @@ body {
     font-size: 10px !important;
     margin-right: 4px !important;
   }
+}
+
+/* MOBILE: SHOW OFFER IMAGE ABOVE CARD */
+@media (max-width: 768px) {
+  .mid-offer-inner {
+    display: flex !important;
+    flex-direction: column-reverse !important;
+    gap: 22px !important;
+  }
+
+  .mid-offer-image {
+    width: 100% !important;
+  }
+
+  .mid-offer-image img {
+    width: 100% !important;
+    border-radius: 0 !important;
+  }
+
+  .mid-offer-card {
+    width: 100% !important;
+  }
+}
+
+.mid-offer-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.offer-list-check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  border-radius: 50%;
+  background: #13B6B5;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1;
+  margin-top: 3px;
 }
   </style>
 </head>
@@ -1378,7 +1334,7 @@ body {
       </div>
       <div class="reason-content">
         <div class="reason-number">Reason 1</div>
-        <div class="reason-headline">1. YOUR FINGER IS ALREADY SOMETHING HE TRUSTS</div>
+        <h2 class="reason-headline">Your finger is already something he trusts</h2>
         <div class="reason-body">
           <p>A toothbrush is a foreign object coming at his face. Your finger isn't. They spent years learning that your hand means safety. When the tool is your finger, the resistance that usually starts before you even begin, just doesn't.</p>
         </div>
@@ -1391,7 +1347,7 @@ body {
       </div>
       <div class="reason-content">
         <div class="reason-number">Reason 2</div>
-        <div class="reason-headline">2. TEXTURE IS WHAT ACTUALLY REMOVES PLAQUE, NOT PASTE</div>
+        <h2 class="reason-headline">Texture is what actually removes plaque, not paste</h2>
         <div class="reason-body">
           <p>Plaque is a sticky film. A smooth surface slides right over it. FreshWipes have a raised, textured surface that physically grips and lifts bacteria off the tooth. That's the step most products skip entirely, and why the problem keeps coming back.</p>
         </div>
@@ -1404,7 +1360,7 @@ body {
       </div>
       <div class="reason-content">
         <div class="reason-number">Reason 3</div>
-        <div class="reason-headline">3. IT'S DONE IN 30 SECONDS BEFORE THEY DECIDE THEY HATE IT</div>
+        <h2 class="reason-headline">It's done in 30 seconds before they decide they hate it</h2>
         <div class="reason-body">
           <p>Dogs build resistance over time. Give them 45 seconds and they've made up their mind. Finger wipes are done before that window closes. Fast enough that most dogs don't even register it as something to resist.</p>
         </div>
@@ -1424,13 +1380,15 @@ body {
         </div>
         <h3 class="mid-offer-title">FreshWipes Plaque Relief Kit</h3>
         <ul class="mid-offer-list">
-          <li>✔ Textured surface lifts away plaque</li>
-          <li>✔ Antibacterial ingredients stop buildup</li>
-          <li>✔ Gentle on gums, no toothbrush needed</li>
-          <li>✔ 30-second routine, results that last</li>
+          <li><span class="offer-list-check">✓</span> Textured surface lifts away plaque</li>
+          <li><span class="offer-list-check">✓</span> Antibacterial ingredients stop buildup</li>
+          <li><span class="offer-list-check">✓</span> Gentle on gums, no toothbrush needed</li>
+          <li><span class="offer-list-check">✓</span> 30-second routine, results that last</li>
         </ul>
         <a href="https://shopvetpets.com/products/freshwipes-kit-protects-against-dental-diseases" class="mid-offer-btn">BUY 2 GET 2 + FREE GIFTS</a>
-        <div class="mid-offer-meta">Sell-out Risk: <strong style="color:#E74C3C;">High</strong> &nbsp;|&nbsp; FREE Shipping</div>
+        <div class="mid-offer-meta">
+  Sell-out Risk: <strong style="color:#E74C3C;">High</strong> &nbsp;|&nbsp; <strong style="color:#13B6B5; font-weight:800;">FREE</strong> Shipping
+</div>
         <div class="mid-offer-guarantee">100-Day Money Back Guarantee</div>
       </div>
       <div class="mid-offer-image">
@@ -1447,7 +1405,7 @@ body {
       </div>
       <div class="reason-content">
         <div class="reason-number">Reason 4</div>
-        <div class="reason-headline">4. NO BRISTLES MEANS NO SENSITIVITY</div>
+        <h2 class="reason-headline">No bristles means no sensitivity</h2>
         <div class="reason-body">
           <p>Toothbrush bristles press into gum tissue. If there's any early inflammation, which there usually is when buildup has been going on a while, that pressure hurts. The soft textured wipe cleans without pressing. To your dog, it feels like a rub, not a scrape.</p>
         </div>
@@ -1460,7 +1418,7 @@ body {
       </div>
       <div class="reason-content">
         <div class="reason-number">Reason 5</div>
-        <div class="reason-headline">5. ANTIBACTERIAL INGREDIENTS SLOW DOWN WHAT GROWS BACK OVERNIGHT</div>
+        <h2 class="reason-headline">Antibacterial ingredients slow down what grows back overnight</h2>
         <div class="reason-body">
           <p>Cleaning removes what's there today. But bacteria start rebuilding within hours. FreshWipes have antibacterial ingredients that slow that regrowth down between sessions. That's the difference between buying yourself one clean day and actually interrupting the cycle.</p>
         </div>
@@ -1473,7 +1431,7 @@ body {
       </div>
       <div class="reason-content">
         <div class="reason-number">Reason 6</div>
-        <div class="reason-headline">6. 30 SECONDS IS EASY ENOUGH TO DO EVERY SINGLE DAY</div>
+        <h2 class="reason-headline">30 seconds is easy enought to do every day</h2>
         <div class="reason-body">
           <p>Brushing sessions that take 10 minutes and end in a fight get skipped. And skipped sessions are why the buildup comes back. A routine you'll actually do every day beats a thorough one you do twice a month. FreshWipes make it easy.</p>
         </div>
@@ -1486,7 +1444,7 @@ body {
       </div>
       <div class="reason-content">
         <div class="reason-number">Reason 7</div>
-        <div class="reason-headline">7. WHEN THE FIRST ONE GOES SMOOTHLY, EVERYTHING CHANGES</div>
+        <h2 class="reason-headline">When the first one goes smoothly, everything changes</h2>
         <div class="reason-body">
           <p>Most owners say the same thing: their dog just sat there. No fight. No drama. And after that first calm session, the next one was easier. Then the next. Within a week it's just part of the routine. That's what consistent daily care actually looks like. Not a battle. Just 30 seconds.</p>
         </div>
@@ -1506,13 +1464,15 @@ body {
         </div>
         <h3 class="mid-offer-title">FreshWipes Plaque Relief Kit</h3>
         <ul class="mid-offer-list">
-          <li>✔ Textured surface lifts away plaque</li>
-          <li>✔ Antibacterial ingredients stop buildup</li>
-          <li>✔ Gentle on gums, no toothbrush needed</li>
-          <li>✔ 30-second routine, results that last</li>
+          <li><span class="offer-list-check">✓</span> Textured surface lifts away plaque</li>
+          <li><span class="offer-list-check">✓</span> Antibacterial ingredients stop buildup</li>
+          <li><span class="offer-list-check">✓</span> Gentle on gums, no toothbrush needed</li>
+          <li><span class="offer-list-check">✓</span> 30-second routine, results that last</li>
         </ul>
         <a href="https://shopvetpets.com/products/freshwipes-kit-protects-against-dental-diseases" class="mid-offer-btn">BUY 2 GET 2 + FREE GIFTS</a>
-        <div class="mid-offer-meta">Sell-out Risk: <strong style="color:#E74C3C;">High</strong> &nbsp;|&nbsp; FREE Shipping</div>
+        <div class="mid-offer-meta">
+  Sell-out Risk: <strong style="color:#E74C3C;">High</strong> &nbsp;|&nbsp; <strong style="color:#13B6B5; font-weight:800;">FREE</strong> Shipping
+</div>
         <div class="mid-offer-guarantee">100-Day Money Back Guarantee</div>
       </div>
       <div class="mid-offer-image">

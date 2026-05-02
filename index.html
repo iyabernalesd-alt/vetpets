@@ -1311,43 +1311,39 @@
     <p style="margin-top:6px; font-size:11px;">Individual results may vary. FreshWipes are not intended to diagnose, treat, cure, or prevent any disease. Consult your veterinarian for persistent dental concerns.</p>
   </div>
 
-  <script>
-  (function() {
-    var endTime = Date.now() + (11 * 3600 + 47 * 60 + 33) * 1000;
+ <script>
+  function startCountdown() {
+    var totalSeconds = (11 * 3600) + (47 * 60) + 33;
 
-    function update() {
-      var diff = Math.max(0, endTime - Date.now());
-      var h = Math.floor(diff / 3600000);
-      var m = Math.floor((diff % 3600000) / 60000);
-      var s = Math.floor((diff % 60000) / 1000);
+    function updateCountdown() {
+      var h = Math.floor(totalSeconds / 3600);
+      var m = Math.floor((totalSeconds % 3600) / 60);
+      var s = totalSeconds % 60;
 
-      var hour = document.getElementById('cd-h');
-      var min = document.getElementById('cd-m');
-      var sec = document.getElementById('cd-s');
+      var ids = [
+        ['cd-h', h], ['cd-m', m], ['cd-s', s],
+        ['mid-cd-h', h], ['mid-cd-m', m], ['mid-cd-s', s]
+      ];
 
-      if (hour && min && sec) {
-        hour.textContent = String(h).padStart(2, '0');
-        min.textContent = String(m).padStart(2, '0');
-        sec.textContent = String(s).padStart(2, '0');
-      }
+      ids.forEach(function(item) {
+        var el = document.getElementById(item[0]);
+        if (el) el.textContent = String(item[1]).padStart(2, '0');
+      });
 
-      var mh = document.getElementById('mid-cd-h');
-      var mm = document.getElementById('mid-cd-m');
-      var ms = document.getElementById('mid-cd-s');
-
-      if (mh && mm && ms) {
-        mh.textContent = String(h).padStart(2, '0');
-        mm.textContent = String(m).padStart(2, '0');
-        ms.textContent = String(s).padStart(2, '0');
-      }
-
-      if (diff > 0) {
-        setTimeout(update, 1000);
+      if (totalSeconds > 0) {
+        totalSeconds--;
       }
     }
 
-    update();
-  })();
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', startCountdown);
+  } else {
+    startCountdown();
+  }
 
   function toggleFaq(btn) {
     var answer = btn.nextElementSibling;

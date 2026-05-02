@@ -1,3 +1,4 @@
+{% layout none %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -542,31 +543,37 @@
     }
 
     .offer-block {
-      background: linear-gradient(135deg, var(--brand-teal) 0%, var(--brand-blue) 100%);
+      background: #0D1B2A;
       color: #fff;
-      padding: 56px 20px;
-      margin: 62px 0 0;
+      padding: 56px 20px 48px;
+      margin: 56px 0 0;
       text-align: center;
     }
 
     .offer-block .offer-eyebrow {
       font-size: 13px;
       font-weight: 800;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #00B4D8;
       margin-bottom: 10px;
     }
 
     .offer-block h2 {
-      font-size: clamp(26px, 4vw, 42px);
-      font-weight: 800;
-      line-height: 1.12;
-      letter-spacing: -0.03em;
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 900;
+      line-height: 1.15;
       margin-bottom: 12px;
+      color: #fff;
+    }
+
+    .offer-block h2 span {
+      color: #00B4D8;
     }
 
     .offer-block .offer-sub {
-      font-size: 17px;
-      opacity: 0.92;
+      font-size: 16px;
+      opacity: 0.85;
       max-width: 620px;
       margin: 0 auto 28px;
       line-height: 1.6;
@@ -575,15 +582,15 @@
     .offer-badges {
       display: flex;
       justify-content: center;
-      gap: 14px;
+      gap: 16px;
       flex-wrap: wrap;
       margin-bottom: 28px;
     }
 
     .offer-badge {
-      background: rgba(255,255,255,0.14);
-      border: 1px solid rgba(255,255,255,0.25);
-      border-radius: 8px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 6px;
       padding: 9px 16px;
       font-size: 14px;
       font-weight: 700;
@@ -606,21 +613,40 @@
       text-decoration: none;
     }
 
+    .offer-block .btn-cta {
+      background: #00B4D8;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      padding: 16px 42px;
+      border-radius: 50px;
+    }
+
     .stock-note {
       margin-top: 14px;
       font-size: 13px;
       opacity: 0.9;
     }
 
+    .offer-block .stock-note {
+      margin-top: 18px;
+      font-size: 13px;
+      opacity: 0.8;
+    }
+
+    .offer-block .stock-note strong {
+      color: #F4A300;
+    }
+
     .check-icon {
       width: 18px;
       height: 18px;
-      background: #fff;
-      color: var(--brand-teal);
+      background: #13B6B5;
+      color: #fff;
       font-size: 11px;
     }
-
-    .reviews-section {
+        .reviews-section {
       background: #ffffff;
       width: 100%;
       padding: 56px 20px;
@@ -843,455 +869,13 @@
     }
 
     @media (max-width: 768px) {
-      .article-header { padding-top: 30px; }
-      .article-header h1 { font-size: 30px; }
-      .hook-quote { font-size: 15px; }
-
-      .trust-bar-inner {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
-      }
-
-      .trust-item { font-size: 13px; }
-
-      .trust-icon {
-        width: 28px;
-        height: 28px;
-        font-size: 16px;
-      }
-
-      .comparison-section {
-        padding-left: 10px;
-        padding-right: 10px;
-      }
-
-      .comparison-table {
-        table-layout: fixed;
-        font-size: 10px;
-      }
-
-      .comparison-table th,
-      .comparison-table td {
-        padding: 8px 4px;
-        font-size: 10px;
-        white-space: normal;
-        word-break: break-word;
-        line-height: 1.25;
-      }
-
-      .comparison-table th.col-product { font-size: 11px; }
-
-      .comparison-table td.row-label {
-        font-size: 10px;
-        white-space: normal;
-      }
-
-      .table-logo { max-width: 72px; }
-
-      .icon-check,
-      .icon-cross,
-      .icon-neutral {
-        width: 16px;
-        height: 16px;
-        font-size: 10px;
-        margin-right: 4px;
-      }
-
-      .reason-item,
-      .mid-offer-inner {
-        grid-template-columns: 1fr;
-        gap: 22px;
-      }
-
-      .reason-item {
-        margin-bottom: 50px;
-      }
-
-      .reason-headline { font-size: 26px; }
-
       .reviews-grid {
         grid-template-columns: 1fr;
       }
-
       .sticky-cta { display: block; }
-
       body { padding-bottom: 76px !important; }
     }
   </style>
 </head>
 
 <body>
-
-  <div class="topbar-guarantee">TRY IT RISK-FREE · 100-DAY MONEY-BACK GUARANTEE</div>
-
-  <div class="topbar-sale">
-    <span class="sale-label">Limited-Time Deal</span>
-    <span class="deal-text">BUY 2 GET 2 FREE</span>
-    <div class="countdown" id="countdown">
-      <div class="countdown-unit"><span class="countdown-num" id="cd-h">11</span><span class="countdown-label">HR</span></div>
-      <span class="countdown-sep">:</span>
-      <div class="countdown-unit"><span class="countdown-num" id="cd-m">47</span><span class="countdown-label">MIN</span></div>
-      <span class="countdown-sep">:</span>
-      <div class="countdown-unit"><span class="countdown-num" id="cd-s">33</span><span class="countdown-label">SEC</span></div>
-    </div>
-  </div>
-
-  <div class="article-header">
-    <h1>7 Reasons Dog Owners Who've Tried Every Dental Care Routine Are Finally Switching to Anti-Bacterial Finger Wipes</h1>
-
-    <div class="author-block">
-      <div class="author-avatar">
-        <img src="https://t3.ftcdn.net/jpg/03/79/25/32/360_F_379253282_e3Id5exRs29FkuiooSPUHz82UIirNNsr.jpg" alt="Margaret L.">
-      </div>
-      <div class="author-info">
-        <div class="author-name">Margaret L. <span class="verified-badge">✔ Verified</span></div>
-        <div class="author-date">Updated 3 Days Ago</div>
-      </div>
-    </div>
-
-    <div class="hook-quote">
-      <p>"You know their teeth need cleaning. You just can't get near them."</p>
-      <p>Every day you skip it, the buildup gets a little worse. And somewhere in the back of your mind, you know it.</p>
-      <p>Here's why finger wipes, and not the ordinary ones, anti-bacterial finger wipes, work when the toothbrush never did.</p>
-    </div>
-  </div>
-
-  <div class="trust-bar">
-    <div class="trust-bar-inner">
-      <div class="trust-item"><span class="trust-icon">✔</span> Removes Plaque at the Gumline</div>
-      <div class="trust-item"><span class="trust-icon">✔</span> CPC + Green Tea Extract</div>
-      <div class="trust-item"><span class="trust-icon">✔</span> 30 Seconds Daily</div>
-      <div class="trust-item"><span class="trust-icon">✔</span> 100-Day Money-Back Guarantee</div>
-    </div>
-  </div>
-
-  <div class="comparison-section">
-    <div class="comparison-table-wrapper">
-      <table class="comparison-table">
-        <thead>
-          <tr>
-            <th style="text-align:left; background:transparent; border-bottom:2px solid var(--border); padding-left:0;"></th>
-            <th class="col-product">
-              <img class="table-logo" src="https://cdn.shopify.com/s/files/1/0735/4833/3323/files/download.png?v=1777102245" alt="VetPets">
-              <div>FreshWipes</div>
-            </th>
-            <th class="col-competitor">Water Additives<br>&amp; Sprays</th>
-            <th class="col-competitor">Brushing<br>Alone</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="row-label"><div class="row-label-inner"><span class="icon-check">✔</span> Reaches Gumline</div></td>
-            <td class="col-product"><span class="icon-check">✔</span> Direct contact</td>
-            <td><span class="icon-cross">✖</span> Diluted in water</td>
-            <td><span class="icon-neutral">–</span> If dog cooperates</td>
-          </tr>
-          <tr>
-            <td class="row-label"><div class="row-label-inner"><span class="icon-check">✔</span> Mechanical Scrubbing</div></td>
-            <td class="col-product"><span class="icon-check">✔</span> Textured surface</td>
-            <td><span class="icon-cross">✖</span> No scrubbing action</td>
-            <td><span class="icon-neutral">–</span> Bristles miss edges</td>
-          </tr>
-          <tr>
-            <td class="row-label"><div class="row-label-inner"><span class="icon-check">✔</span> Kills Bacteria</div></td>
-            <td class="col-product"><span class="icon-check">✔</span> CPC + green tea</td>
-            <td><span class="icon-neutral">–</span> Weak concentration</td>
-            <td><span class="icon-cross">✖</span> No antibacterial</td>
-          </tr>
-          <tr>
-            <td class="row-label"><div class="row-label-inner"><span class="icon-check">✔</span> Most Dogs Accept It</div></td>
-            <td class="col-product"><span class="icon-check">✔</span> Finger = trusted</td>
-            <td><span class="icon-check">✔</span> In water bowl</td>
-            <td><span class="icon-cross">✖</span> Often a fight</td>
-          </tr>
-          <tr>
-            <td class="row-label"><div class="row-label-inner"><span class="icon-check">✔</span> Time Per Day</div></td>
-            <td class="col-product"><strong>30 seconds</strong></td>
-            <td>Passive / ongoing</td>
-            <td>5–10 minutes</td>
-          </tr>
-          <tr>
-            <td class="row-label"><div class="row-label-inner"><span class="icon-check">✔</span> Visible Proof</div></td>
-            <td class="col-product"><span class="icon-check">✔</span> See it on the wipe</td>
-            <td><span class="icon-cross">✖</span> Nothing visible</td>
-            <td><span class="icon-neutral">–</span> Hard to see</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="tldr-line"><strong>TLDR:</strong> Finally, a dental tool that physically removes plaque and kills the bacteria, in 30 seconds, without a fight.</p>
-  </div>
-
-  <div class="reasons-section">
-
-    <div class="reason-item">
-      <div class="reason-image-slot">
-        <img src="https://cdn.shopify.com/s/files/1/0735/4833/3323/files/1._Gumline_Problem_Reason_1.png?v=1777707506" alt="FreshWipes gumline dental care for dogs">
-      </div>
-      <div class="reason-content">
-        <div class="reason-number">Reason 1</div>
-        <div class="reason-headline">1. YOUR FINGER IS ALREADY SOMETHING HE TRUSTS</div>
-        <div class="reason-body">
-          <p>A toothbrush is a foreign object coming at his face. Your finger isn't. They spent years learning that your hand means safety. When the tool is your finger, the resistance that usually starts before you even begin, just doesn't.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="reason-item">
-      <div class="reason-image-slot">
-        <img src="https://cdn.shopify.com/s/files/1/0735/4833/3323/files/2._Texture_vs_Smooth_Reason_2.png?v=1777707507" alt="Textured FreshWipes compared to smooth dental wipes">
-      </div>
-      <div class="reason-content">
-        <div class="reason-number">Reason 2</div>
-        <div class="reason-headline">2. TEXTURE IS WHAT ACTUALLY REMOVES PLAQUE, NOT PASTE</div>
-        <div class="reason-body">
-          <p>Plaque is a sticky film. A smooth surface slides right over it. FreshWipes have a raised, textured surface that physically grips and lifts bacteria off the tooth. That's the step most products skip entirely, and why the problem keeps coming back.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="reason-item">
-      <div class="reason-image-slot">
-        <img src="https://cdn.shopify.com/s/files/1/0735/4833/3323/files/3._Dirty_Wipe_Proof_Reason_3.png?v=1777707507" alt="Dirty wipe proof after cleaning dog's teeth">
-      </div>
-      <div class="reason-content">
-        <div class="reason-number">Reason 3</div>
-        <div class="reason-headline">3. IT'S DONE IN 30 SECONDS BEFORE THEY DECIDE THEY HATE IT</div>
-        <div class="reason-body">
-          <p>Dogs build resistance over time. Give them 45 seconds and they've made up their mind. Finger wipes are done before that window closes. Fast enough that most dogs don't even register it as something to resist.</p>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="mid-offer-section">
-    <div class="mid-offer-inner">
-      <div class="mid-offer-card">
-        <div class="mid-offer-badge">LIMITED TIME DEAL</div>
-        <div class="mid-offer-countdown">
-          <div><span id="mid-cd-h">09</span><small>hrs</small></div>
-          <div><span id="mid-cd-m">05</span><small>min</small></div>
-          <div><span id="mid-cd-s">17</span><small>sec</small></div>
-        </div>
-        <h3 class="mid-offer-title">FreshWipes Plaque Relief Kit</h3>
-        <ul class="mid-offer-list">
-          <li>✔ Textured surface lifts away plaque</li>
-          <li>✔ Antibacterial ingredients stop buildup</li>
-          <li>✔ Gentle on gums, no toothbrush needed</li>
-          <li>✔ 30-second routine, results that last</li>
-        </ul>
-        <a href="https://shopvetpets.com/products/freshwipes-kit-protects-against-dental-diseases" class="mid-offer-btn">BUY 2 GET 2 + FREE GIFTS</a>
-        <div class="mid-offer-meta">Sell-out Risk: <strong style="color:#E74C3C;">High</strong> &nbsp;|&nbsp; FREE Shipping</div>
-        <div class="mid-offer-guarantee">100-Day Money Back Guarantee</div>
-      </div>
-      <div class="mid-offer-image">
-        <img src="https://cdn.shopify.com/s/files/1/0735/4833/3323/files/hf_20260501_055058_90557624-f4e0-44f4-9d9c-98109e241cb0.png" alt="FreshWipes Buy 2 Get 2 Free Offer">
-      </div>
-    </div>
-  </div>
-
-  <div class="reasons-section">
-
-    <div class="reason-item">
-      <div class="reason-image-slot">
-        <img src="https://cdn.shopify.com/s/files/1/0735/4833/3323/files/4._Ingredients_Reason_4.png?v=1777707506" alt="FreshWipes antibacterial ingredients">
-      </div>
-      <div class="reason-content">
-        <div class="reason-number">Reason 4</div>
-        <div class="reason-headline">4. NO BRISTLES MEANS NO SENSITIVITY</div>
-        <div class="reason-body">
-          <p>Toothbrush bristles press into gum tissue. If there's any early inflammation, which there usually is when buildup has been going on a while, that pressure hurts. The soft textured wipe cleans without pressing. To your dog, it feels like a rub, not a scrape.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="reason-item">
-      <div class="reason-image-slot">
-        <img src="https://cdn.shopify.com/s/files/1/0735/4833/3323/files/5._Finger_Trust_Reason_5.png?v=1777701494" alt="30 second FreshWipes dog dental routine">
-      </div>
-      <div class="reason-content">
-        <div class="reason-number">Reason 5</div>
-        <div class="reason-headline">5. ANTIBACTERIAL INGREDIENTS SLOW DOWN WHAT GROWS BACK OVERNIGHT</div>
-        <div class="reason-body">
-          <p>Cleaning removes what's there today. But bacteria start rebuilding within hours. FreshWipes have antibacterial ingredients that slow that regrowth down between sessions. That's the difference between buying yourself one clean day and actually interrupting the cycle.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="reason-item">
-      <div class="reason-image-slot">
-        <img src="https://cdn.shopify.com/s/files/1/0735/4833/3323/files/6._30_Seconds_Routine.png?v=1777707506" alt="Dog calmly accepting FreshWipes finger wipe">
-      </div>
-      <div class="reason-content">
-        <div class="reason-number">Reason 6</div>
-        <div class="reason-headline">6. 30 SECONDS IS EASY ENOUGH TO DO EVERY SINGLE DAY</div>
-        <div class="reason-body">
-          <p>Brushing sessions that take 10 minutes and end in a fight get skipped. And skipped sessions are why the buildup comes back. A routine you'll actually do every day beats a thorough one you do twice a month. FreshWipes make it easy.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="reason-item">
-      <div class="reason-image-slot">
-        <img src="https://cdn.shopify.com/s/files/1/0735/4833/3323/files/7._Week-by-Week_Progress.png?v=1777707506" alt="FreshWipes week by week progress">
-      </div>
-      <div class="reason-content">
-        <div class="reason-number">Reason 7</div>
-        <div class="reason-headline">7. WHEN THE FIRST ONE GOES SMOOTHLY, EVERYTHING CHANGES</div>
-        <div class="reason-body">
-          <p>Most owners say the same thing: their dog just sat there. No fight. No drama. And after that first calm session, the next one was easier. Then the next. Within a week it's just part of the routine. That's what consistent daily care actually looks like. Not a battle. Just 30 seconds.</p>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="mid-offer-section">
-    <div class="mid-offer-inner">
-      <div class="mid-offer-card">
-        <div class="mid-offer-badge">LIMITED TIME DEAL</div>
-        <div class="mid-offer-countdown">
-          <div><span id="mid-cd-h-2">09</span><small>hrs</small></div>
-          <div><span id="mid-cd-m-2">05</span><small>min</small></div>
-          <div><span id="mid-cd-s-2">17</span><small>sec</small></div>
-        </div>
-        <h3 class="mid-offer-title">FreshWipes Plaque Relief Kit</h3>
-        <ul class="mid-offer-list">
-          <li>✔ Textured surface lifts away plaque</li>
-          <li>✔ Antibacterial ingredients stop buildup</li>
-          <li>✔ Gentle on gums, no toothbrush needed</li>
-          <li>✔ 30-second routine, results that last</li>
-        </ul>
-        <a href="https://shopvetpets.com/products/freshwipes-kit-protects-against-dental-diseases" class="mid-offer-btn">BUY 2 GET 2 + FREE GIFTS</a>
-        <div class="mid-offer-meta">Sell-out Risk: <strong style="color:#E74C3C;">High</strong> &nbsp;|&nbsp; FREE Shipping</div>
-        <div class="mid-offer-guarantee">100-Day Money Back Guarantee</div>
-      </div>
-      <div class="mid-offer-image">
-        <img src="https://cdn.shopify.com/s/files/1/0735/4833/3323/files/hf_20260501_055058_90557624-f4e0-44f4-9d9c-98109e241cb0.png" alt="FreshWipes Buy 2 Get 2 Free Offer">
-      </div>
-    </div>
-  </div>
-
-  <div class="offer-block" id="offer">
-    <div class="offer-eyebrow">Limited-Time Deal</div>
-    <h2>Start</h2>
-    <p class="offer-sub">Start the 30-second routine with anti-bacterial finger wipes designed to reach the gumline, lift plaque, and make daily dental care easier.</p>
-    <div class="offer-badges">
-      <div class="offer-badge"><span class="check-icon">✔</span> 100-Day Money-Back Guarantee</div>
-      <div class="offer-badge"><span class="check-icon">✔</span> Buy 2 Get 2 Free</div>
-      <div class="offer-badge"><span class="check-icon">✔</span> 35,000+ Happy Dogs</div>
-    </div>
-    <a href="https://shopvetpets.com/products/freshwipes-kit-protects-against-dental-diseases" class="btn-cta">Check Availability</a>
-    <div class="stock-note">Stock Alert: <strong>Running Low</strong>, this deal ends when inventory does.</div>
-  </div>
-
-  <div class="reviews-section">
-    <div class="reviews-inner">
-      <h2 class="section-heading">Real Dog Owners, Real Routine Changes</h2>
-      <p class="section-sub">A few reasons customers say they finally stuck with FreshWipes.</p>
-      <div class="rating-summary">
-        <span class="rating-stars">★★★★★</span>
-        <span class="rating-score">4.9</span>
-        <span class="rating-count">Based on 3,200+ reviews</span>
-      </div>
-
-      <div class="reviews-grid">
-        <div class="review-card"><div><div class="review-stars">★★★★★</div><div class="review-title">Finally something my dog lets me use</div><div class="review-body">I could never get a toothbrush near him. With these, I use my finger and he stays calm. It feels much easier to keep up every night.</div></div><div class="review-author">Margaret T. <span class="review-verified">✔ Verified</span></div></div>
-        <div class="review-card"><div><div class="review-stars">★★★★★</div><div class="review-title">The wipe showed me it was working</div><div class="review-body">Seeing residue on the wipe made a big difference for me. I finally felt like I was actually removing something, not just masking bad breath.</div></div><div class="review-author">Susan K. <span class="review-verified">✔ Verified</span></div></div>
-        <div class="review-card"><div><div class="review-stars">★★★★★</div><div class="review-title">Easy enough to do daily</div><div class="review-body">The biggest win is that it takes less than a minute. I leave the tub near his treats and it has become part of our nighttime routine.</div></div><div class="review-author">Dorothy M. <span class="review-verified">✔ Verified</span></div></div>
-        <div class="review-card"><div><div class="review-stars">★★★★★</div><div class="review-title">Better than fighting with a brush</div><div class="review-body">Brushing was always stressful. This feels less intimidating for my dog, and I can actually reach around the gumline.</div></div><div class="review-author">Carol B. <span class="review-verified">✔ Verified</span></div></div>
-        <div class="review-card"><div><div class="review-stars">★★★★★</div><div class="review-title">Worth trying with the guarantee</div><div class="review-body">I was skeptical after trying chews and additives, but the 100-day guarantee made it easier to test. I am now on my second order.</div></div><div class="review-author">Patricia H. <span class="review-verified">✔ Verified</span></div></div>
-        <div class="review-card"><div><div class="review-stars">★★★★★</div><div class="review-title">The texture is the difference</div><div class="review-body">You can feel that the wipe is actually doing something. It grips better than the smooth wipes I tried before.</div></div><div class="review-author">Linda R. <span class="review-verified">✔ Verified</span></div></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="faq-section">
-    <h2 class="section-heading" style="margin-bottom:28px;">Frequently Asked Questions</h2>
-    <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">How is this different from regular dental wipes?<span class="faq-chevron">▼</span></button><div class="faq-answer"><p>Regular wipes can be smooth and mainly wipe the surface. FreshWipes are made to combine a textured wipe surface with anti-bacterial support from CPC and green tea extract, so the routine helps lift plaque while targeting odor-causing bacteria.</p></div></div>
-    <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">What if my dog hates toothbrushes?<span class="faq-chevron">▼</span></button><div class="faq-answer"><p>That is exactly why finger wipes are useful. Your finger feels more familiar than a brush, so many dogs who resist brushing are more comfortable with this routine.</p></div></div>
-    <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">How long does it take each day?<span class="faq-chevron">▼</span></button><div class="faq-answer"><p>Most owners can finish in about 30 seconds. The goal is simple daily contact along the teeth and gumline.</p></div></div>
-    <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">Are CPC and green tea extract safe for pets?<span class="faq-chevron">▼</span></button><div class="faq-answer"><p>FreshWipes are formulated for pet oral care. As with any pet product, consult your veterinarian first if your dog has sensitivities, existing oral disease, or a medical condition.</p></div></div>
-    <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">What does the 100-day guarantee cover?<span class="faq-chevron">▼</span></button><div class="faq-answer"><p>The guarantee gives customers time to try the routine consistently. If they are not happy with the results, they can contact VetPets within the guarantee window for support.</p></div></div>
-  </div>
-
-  <div class="final-cta" id="final-cta">
-    <div class="eyebrow">Due to High Demand · Limited Stock Remaining</div>
-    <h2>Give Your Dog the Clean, Healthy Smile
-They Deserve</h2>
-    <p>35,000+ dog owners have already made FreshWipes part of their nightly routine. 30 seconds. Visible results in 2–3 weeks. 100 days to decide if it's right for you.</p>
-    <a href="https://shopvetpets.com/products/freshwipes-kit-protects-against-dental-diseases" class="btn-cta">Start the Routine →</a>
-    <div class="guarantee-strip">
-      <div class="guarantee-item"><span class="check-icon">✔</span> 100-Day Money-Back Guarantee</div>
-      <div class="guarantee-item"><span class="check-icon">✔</span> Buy 2 Get 2 Free</div>
-      <div class="guarantee-item"><span class="check-icon">✔</span> Free Shipping</div>
-    </div>
-  </div>
-
-  <div class="sticky-cta" id="sticky-cta">
-    <div class="sticky-cta-inner">
-      <div class="sticky-cta-text">Buy 2 Get 2 Free · <strong>100-Day Guarantee</strong></div>
-      <a href="https://shopvetpets.com/products/freshwipes-kit-protects-against-dental-diseases" class="btn-cta">Check Availability</a>
-    </div>
-  </div>
-
-  <div class="footer-custom">
-    <p>© 2026 VetPets. All Rights Reserved. &nbsp;|&nbsp; <a href="#">Privacy Policy</a> &nbsp;|&nbsp; <a href="#">Terms &amp; Conditions</a></p>
-    <p style="margin-top:6px; font-size:11px;">Individual results may vary. FreshWipes are not intended to diagnose, treat, cure, or prevent any disease. Consult your veterinarian for persistent dental concerns.</p>
-  </div>
-
-  <script>
-    function startCountdown() {
-      var totalSeconds = (11 * 3600) + (47 * 60) + 33;
-
-      function updateCountdown() {
-        var h = Math.floor(totalSeconds / 3600);
-        var m = Math.floor((totalSeconds % 3600) / 60);
-        var s = totalSeconds % 60;
-
-        var ids = [
-          ['cd-h', h], ['cd-m', m], ['cd-s', s],
-          ['mid-cd-h', h], ['mid-cd-m', m], ['mid-cd-s', s],
-          ['mid-cd-h-2', h], ['mid-cd-m-2', m], ['mid-cd-s-2', s]
-        ];
-
-        ids.forEach(function(item) {
-          var el = document.getElementById(item[0]);
-          if (el) el.textContent = String(item[1]).padStart(2, '0');
-        });
-
-        if (totalSeconds > 0) totalSeconds--;
-      }
-
-      updateCountdown();
-      setInterval(updateCountdown, 1000);
-    }
-
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', startCountdown);
-    } else {
-      startCountdown();
-    }
-
-    function toggleFaq(btn) {
-      var answer = btn.nextElementSibling;
-      var isOpen = answer.classList.contains('open');
-
-      document.querySelectorAll('.faq-answer').forEach(function(a) {
-        a.classList.remove('open');
-      });
-
-      document.querySelectorAll('.faq-question').forEach(function(q) {
-        q.classList.remove('open');
-      });
-
-      if (!isOpen) {
-        answer.classList.add('open');
-        btn.classList.add('open');
-      }
-    }
-  </script>
-
-</body>
-</html>

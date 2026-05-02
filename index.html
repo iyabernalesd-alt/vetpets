@@ -542,29 +542,42 @@
     }
 
     .offer-block {
-  background: #0D1B2A;
+      background: #0D1B2A;
+      color: #ffffff;
+      padding: 64px 20px;
+      margin: 62px 0 0;
+      text-align: center;
+    }
 
     .offer-block .offer-eyebrow {
+      color: #13B6B5;
       font-size: 13px;
       font-weight: 800;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
       margin-bottom: 10px;
     }
 
     .offer-block h2 {
-      font-size: clamp(26px, 4vw, 42px);
-      font-weight: 800;
-      line-height: 1.12;
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 900;
+      line-height: 1.15;
       letter-spacing: -0.03em;
       margin-bottom: 12px;
+      color: #fff;
+    }
+
+    .offer-block h2 span {
+      color: #13B6B5;
     }
 
     .offer-block .offer-sub {
-      font-size: 17px;
-      opacity: 0.92;
+      font-size: 16px;
+      opacity: 0.88;
       max-width: 620px;
       margin: 0 auto 28px;
       line-height: 1.6;
+      color: #fff;
     }
 
     .offer-badges {
@@ -576,11 +589,12 @@
     }
 
     .offer-badge {
-      background: rgba(255,255,255,0.14);
-      border: 1px solid rgba(255,255,255,0.25);
-      border-radius: 8px;
-      padding: 9px 16px;
-      font-size: 14px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+      border-radius: 6px;
+      padding: 8px 16px;
+      font-size: 13px;
       font-weight: 700;
       display: flex;
       align-items: center;
@@ -601,10 +615,30 @@
       text-decoration: none;
     }
 
+    .offer-block .btn-cta {
+      background: #13B6B5;
+      color: #fff;
+      border-radius: 50px;
+      padding: 16px 40px;
+    }
+
+    .offer-block .btn-cta:hover {
+      background: #0096B7;
+    }
+
     .stock-note {
       margin-top: 14px;
       font-size: 13px;
       opacity: 0.9;
+    }
+
+    .offer-block .stock-note {
+      color: rgba(255,255,255,0.75);
+    }
+
+    .offer-block .stock-note strong {
+      color: #F4A300;
+      opacity: 1;
     }
 
     .check-icon {
@@ -734,7 +768,7 @@
     .faq-answer.open { display: block; }
 
     .final-cta {
-      background: var(--bg-soft);
+      background: #F0FBFF;
       border-top: 3px solid var(--brand-teal);
       padding: 58px 20px 72px;
       text-align: center;
@@ -746,15 +780,20 @@
       letter-spacing: 0.08em;
       color: var(--brand-teal-dark);
       margin-bottom: 10px;
+      text-transform: uppercase;
     }
 
     .final-cta h2 {
       font-size: clamp(26px, 4vw, 40px);
-      font-weight: 800;
+      font-weight: 900;
       line-height: 1.15;
       letter-spacing: -0.03em;
       margin-bottom: 12px;
       color: var(--text-dark);
+    }
+
+    .final-cta h2 span {
+      color: #13B6B5;
     }
 
     .final-cta p {
@@ -766,7 +805,10 @@
     }
 
     .final-cta .btn-cta {
-      background: linear-gradient(135deg, var(--brand-teal) 0%, var(--brand-blue) 100%);
+      background: #13B6B5;
+      color: #fff;
+      border-radius: 50px;
+      font-weight: 800;
     }
 
     .guarantee-strip {
@@ -912,70 +954,6 @@
 
       body { padding-bottom: 76px !important; }
     }
-    /* ===== FORCE OLD HIGH-CONVERTING OFFER STYLE ===== */
-.old-style-offer {
-  background: #0D1B2A !important;
-  color: #fff !important;
-  text-align: center;
-  padding: 64px 20px !important;
-}
-
-.old-style-offer .offer-eyebrow {
-  color: #13B6B5 !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.12em !important;
-  text-transform: uppercase;
-  font-size: 13px !important;
-}
-
-.old-style-offer h2 {
-  font-size: clamp(28px, 4vw, 42px) !important;
-  font-weight: 900 !important;
-  line-height: 1.15 !important;
-  margin-bottom: 14px !important;
-}
-
-.old-style-offer h2 span {
-  color: #13B6B5 !important;
-}
-
-.old-style-offer .offer-sub {
-  font-size: 16px !important;
-  opacity: 0.85 !important;
-  max-width: 540px !important;
-  margin: 0 auto 28px !important;
-}
-
-.old-style-offer .offer-badge {
-  background: rgba(255,255,255,0.1) !important;
-  border: 1px solid rgba(255,255,255,0.2) !important;
-  border-radius: 6px !important;
-  padding: 8px 16px !important;
-  font-size: 13px !important;
-}
-
-.old-style-offer .btn-cta {
-  background: #13B6B5 !important;
-  color: #fff !important;
-  font-size: 18px !important;
-  font-weight: 800 !important;
-  padding: 16px 40px !important;
-  border-radius: 50px !important;
-}
-
-.old-style-offer .btn-cta:hover {
-  background: #0096B7 !important;
-}
-
-.old-style-offer .stock-note {
-  margin-top: 14px !important;
-  font-size: 13px !important;
-  opacity: 0.7 !important;
-}
-
-.old-style-offer .stock-note strong {
-  color: #F4A300 !important;
-}
   </style>
 </head>
 
@@ -1232,17 +1210,17 @@
     </div>
   </div>
 
-  <div class="offer-block old-style-offer" id="offer">
+  <div class="offer-block" id="offer">
     <div class="offer-eyebrow">Limited-Time Deal</div>
     <h2>Buy Two, <span>Get Two Free</span><br>For a Limited Time Only</h2>
-    <p class="offer-sub">Start the 30-second routine with anti-bacterial finger wipes designed to reach the gumline, lift plaque, and make daily dental care easier.</p>
+    <p class="offer-sub">Going fast. This is the lowest price you'll see this year, while supplies last.</p>
     <div class="offer-badges">
       <div class="offer-badge"><span class="check-icon">✔</span> 100-Day Money-Back Guarantee</div>
-      <div class="offer-badge"><span class="check-icon">✔</span> Buy 2 Get 2 Free</div>
+      <div class="offer-badge"><span class="check-icon">✔</span> Free Shipping</div>
       <div class="offer-badge"><span class="check-icon">✔</span> 35,000+ Happy Dogs</div>
     </div>
-    <a href="https://shopvetpets.com/products/freshwipes-kit-protects-against-dental-diseases" class="btn-cta">Check Availability</a>
-    <div class="stock-note">Stock Alert: <strong>Running Low</strong>, this deal ends when inventory does.</div>
+    <a href="https://shopvetpets.com/products/freshwipes-kit-protects-against-dental-diseases" class="btn-cta">Grab Yours →</a>
+    <div class="stock-note">Stock Alert: <strong>Running Low</strong> — This deal ends when inventory does.</div>
   </div>
 
   <div class="reviews-section">
@@ -1276,9 +1254,8 @@
   </div>
 
   <div class="final-cta" id="final-cta">
-    <div class="eyebrow">Due to High Demand · Limited Stock Remaining</div>
-    <h2>Give Your Dog the Clean, Healthy Smile
-They Deserve</h2>
+    <div class="eyebrow">Due to High Demand — Limited Stock Remaining</div>
+    <h2>Give Your Dog the <span>Clean, Healthy Smile</span><br>They Deserve</h2>
     <p>35,000+ dog owners have already made FreshWipes part of their nightly routine. 30 seconds. Visible results in 2–3 weeks. 100 days to decide if it's right for you.</p>
     <a href="https://shopvetpets.com/products/freshwipes-kit-protects-against-dental-diseases" class="btn-cta">Start the Routine →</a>
     <div class="guarantee-strip">

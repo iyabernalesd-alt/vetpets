@@ -1577,7 +1577,7 @@
           <li><span class="offer-list-check">✓</span> Gentle on gums, no toothbrush needed</li>
           <li><span class="offer-list-check">✓</span> 30-second routine, results that last</li>
         </ul>
-        <a href="https://shopvetpets.com/products/freshwipes-kit-protects-against-dental-diseases" class="mid-offer-btn">BUY 2 GET 2 + FREE GIFTS</a>
+        <a href="javascript:void(0)" onclick="openCartWithUpsells()" class="mid-offer-btn">BUY 2 GET 2 + FREE GIFTS</a>
         <div class="mid-offer-meta">
           Sell-out Risk: <strong style="color:#E74C3C;">High</strong> &nbsp;|&nbsp; <strong style="color:#13B6B5; font-weight:800;">FREE</strong> Shipping
         </div>
@@ -1661,9 +1661,8 @@
           <li><span class="offer-list-check">✓</span> Gentle on gums, no toothbrush needed</li>
           <li><span class="offer-list-check">✓</span> 30-second routine, results that last</li>
         </ul>
-        <a href="#" class="mid-offer-btn direct-bundle">
-  BUY 2 GET 2 + FREE GIFTS
-</a>
+        <a href="javascript:void(0)" onclick="openCartWithUpsells()" class="mid-offer-btn">BUY 2 GET 2 + FREE GIFTS</a>
+        <div class="mid-offer-meta">
           Sell-out Risk: <strong style="color:#E74C3C;">High</strong> &nbsp;|&nbsp; <strong style="color:#13B6B5; font-weight:800;">FREE</strong> Shipping
         </div>
         <div class="mid-offer-guarantee">100-Day Money Back Guarantee</div>
@@ -1683,9 +1682,7 @@
       <div class="offer-badge"><span class="check-icon">✔</span> Free Shipping</div>
       <div class="offer-badge"><span class="check-icon">✔</span> 35,000+ Happy Dogs</div>
     </div>
-    <a href="#" class="btn-cta direct-bundle">
-  Check Availability →
-</a>
+    <a href="javascript:void(0)" onclick="openCartWithUpsells()" class="btn-cta">Check Availability →</a>
     <div class="mini-reviews">
       <p>“No more fighting with my dog every night.” <span class="stars">★★★★★</span></p>
       <p>“I actually saw buildup on the wipe — it works.” <span class="stars">★★★★★</span></p>
@@ -1729,9 +1726,7 @@
   Give Your Dog the <span>Clean, Healthy Smile</span> They Deserve
 </h2>
     <p>35,000+ dog owners have already made FreshWipes part of their nightly routine. 30 seconds. Visible results in 2–3 weeks. 100 days to decide if it's right for you.</p>
-    <a href="#" class="btn-cta direct-bundle">
-  Check Availability →
-</a>
+    <a href="javascript:void(0)" onclick="openCartWithUpsells()" class="btn-cta">Check Availability →</a>
     <div class="guarantee-strip">
       <div class="guarantee-item"><span class="check-icon">✔</span> 100-Day Money-Back Guarantee</div>
       <div class="guarantee-item"><span class="check-icon">✔</span> Buy 2 Get 2 Free</div>
@@ -1742,7 +1737,7 @@
   <div class="sticky-cta" id="sticky-cta">
     <div class="sticky-cta-inner">
       <div class="sticky-cta-text">100-Day Money-Back Guarantee + Free Shipping</div>
-      <a href="#" class="btn-cta direct-bundle">BUY 2 GET 2 + FREE GIFTS</a>
+      <a href="javascript:void(0)" onclick="openCartWithUpsells()" class="btn-cta">BUY 2 GET 2 + FREE GIFTS</a>
     </div>
   </div>
 
@@ -1784,6 +1779,18 @@
       startCountdown();
     }
 
+    function openCartWithUpsells() {
+      if (window.Rebuy && window.Rebuy.SmartCart) {
+        window.Rebuy.SmartCart.show();
+      } else {
+        // Fallback for standard Shopify themes
+        document.dispatchEvent(new CustomEvent('cart:open'));
+        // If specific drawer toggle exists
+        const drawer = document.querySelector('.cart-drawer') || document.querySelector('#CartDrawer');
+        if (drawer) drawer.classList.add('active');
+      }
+    }
+
     function toggleFaq(btn) {
       var answer = btn.nextElementSibling;
       var isOpen = answer.classList.contains('open');
@@ -1802,53 +1809,6 @@
       }
     }
   </script>
-  
-<script>
-document.querySelectorAll('.direct-bundle').forEach(function(btn) {
-  btn.addEventListener('click', function(e) {
-    e.preventDefault();
 
-    const originalText = btn.textContent;
-    btn.textContent = 'Adding...';
-    btn.style.pointerEvents = 'none';
-
-    fetch('/cart/add.js', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
-      body: JSON.stringify({
-        items: [
-          { id: 53021516005643, quantity: 4 },
-          { id: 53039564816651, quantity: 1 }
-        ]
-      })
-    })
-    .then(function(res) {
-      if (!res.ok) throw new Error('Add to cart failed');
-      return res.json();
-    })
-    .then(function() {
-      const cartDrawer = document.querySelector('#CartDrawer');
-
-      if (cartDrawer && typeof cartDrawer.open === 'function') {
-  cartDrawer.open();
-} else {
-  document.dispatchEvent(new CustomEvent('cart:open'));
-}
-    })
-    .catch(function(err) {
-      console.error(err);
-      btn.textContent = originalText;
-      btn.style.pointerEvents = '';
-      alert('Add to cart failed. Check variant IDs or product availability.');
-    });
-  });
-});
-</script>
-  
-</script>
-  
 </body>
 </html>

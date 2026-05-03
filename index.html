@@ -1682,9 +1682,7 @@
       <div class="offer-badge"><span class="check-icon">✔</span> Free Shipping</div>
       <div class="offer-badge"><span class="check-icon">✔</span> 35,000+ Happy Dogs</div>
     </div>
-    <a href="#" class="btn-cta direct-buy-btn" data-product-handle="freshwipes-kit-protects-against-dental-diseases">
-  Check Availability →
-</a>
+    <a href="https://shopvetpets.com/products/freshwipes-kit-protects-against-dental-diseases" class="btn-cta">Check Availability →</a>
     <div class="mini-reviews">
       <p>“No more fighting with my dog every night.” <span class="stars">★★★★★</span></p>
       <p>“I actually saw buildup on the wipe — it works.” <span class="stars">★★★★★</span></p>
@@ -1728,9 +1726,7 @@
   Give Your Dog the <span>Clean, Healthy Smile</span> They Deserve
 </h2>
     <p>35,000+ dog owners have already made FreshWipes part of their nightly routine. 30 seconds. Visible results in 2–3 weeks. 100 days to decide if it's right for you.</p>
-    <a href="#" class="btn-cta direct-buy-btn" data-product-handle="freshwipes-kit-protects-against-dental-diseases">
-  Check Availability →
-</a>
+    <a href="https://shopvetpets.com/products/freshwipes-kit-protects-against-dental-diseases" class="btn-cta">Check Availability →</a>
     <div class="guarantee-strip">
       <div class="guarantee-item"><span class="check-icon">✔</span> 100-Day Money-Back Guarantee</div>
       <div class="guarantee-item"><span class="check-icon">✔</span> Buy 2 Get 2 Free</div>
@@ -1801,55 +1797,5 @@
       }
     }
   </script>
-
-  <script>
-document.querySelectorAll('.direct-buy-btn').forEach(function(button) {
-  button.addEventListener('click', function(e) {
-    e.preventDefault();
-
-    var handle = button.getAttribute('data-product-handle');
-    button.style.pointerEvents = 'none';
-    button.textContent = 'Adding...';
-
-    fetch('/products/' + handle + '.js')
-      .then(function(response) {
-        return response.json();
-      })
-      .then(function(product) {
-        var variantId = product.variants[0].id;
-
-        return fetch('/cart/add.js', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-          },
-          body: JSON.stringify({
-            id: variantId,
-            quantity: 1
-          })
-        });
-      })
-      .then(function() {
-        button.style.pointerEvents = '';
-        button.textContent = button.classList.contains('mid-offer-btn')
-          ? 'BUY 2 GET 2 + FREE GIFTS'
-          : 'Check Availability →';
-
-        if (window.theme && window.theme.cartDrawer && typeof window.theme.cartDrawer.open === 'function') {
-          window.theme.cartDrawer.open();
-        } else {
-          document.dispatchEvent(new CustomEvent('cart:refresh'));
-          document.dispatchEvent(new CustomEvent('cart:open'));
-          document.body.classList.add('cart-drawer-open');
-        }
-      })
-      .catch(function(error) {
-        console.error('Direct buy error:', error);
-        window.location.href = '/products/' + handle;
-      });
-  });
-});
-</script>
 </body>
 </html>

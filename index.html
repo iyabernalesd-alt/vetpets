@@ -1801,8 +1801,8 @@
       }
     }
   </script>
-
-  <script>
+  
+<script>
 document.querySelectorAll('.direct-bundle').forEach(function(btn) {
   btn.addEventListener('click', function(e) {
     e.preventDefault();
@@ -1829,7 +1829,7 @@ document.querySelectorAll('.direct-bundle').forEach(function(btn) {
       return res.json();
     })
     .then(function() {
-      window.location.href = '/cart';
+      window.location.href = '/?openCart=true';
     })
     .catch(function(err) {
       console.error(err);
@@ -1840,6 +1840,25 @@ document.querySelectorAll('.direct-bundle').forEach(function(btn) {
   });
 });
 </script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  if (window.location.search.includes('openCart=true')) {
+    setTimeout(function () {
+      var cartIcon =
+        document.querySelector('[aria-controls="CartDrawer"]') ||
+        document.querySelector('[data-cart-toggle]') ||
+        document.querySelector('a[href="/cart"]');
+
+      if (cartIcon) {
+        cartIcon.click();
+      }
+    }, 800);
+  }
+});
+</script>
+
+</body>
   
 </body>
 </html>

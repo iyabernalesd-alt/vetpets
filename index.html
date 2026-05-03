@@ -1661,8 +1661,9 @@
           <li><span class="offer-list-check">✓</span> Gentle on gums, no toothbrush needed</li>
           <li><span class="offer-list-check">✓</span> 30-second routine, results that last</li>
         </ul>
-        <a href="https://shopvetpets.com/products/freshwipes-kit-protects-against-dental-diseases" class="mid-offer-btn">BUY 2 GET 2 + FREE GIFTS</a>
-        <div class="mid-offer-meta">
+        <a href="#" class="mid-offer-btn direct-bundle">
+  BUY 2 GET 2 + FREE GIFTS
+</a>
           Sell-out Risk: <strong style="color:#E74C3C;">High</strong> &nbsp;|&nbsp; <strong style="color:#13B6B5; font-weight:800;">FREE</strong> Shipping
         </div>
         <div class="mid-offer-guarantee">100-Day Money Back Guarantee</div>
@@ -1741,7 +1742,7 @@
   <div class="sticky-cta" id="sticky-cta">
     <div class="sticky-cta-inner">
       <div class="sticky-cta-text">100-Day Money-Back Guarantee + Free Shipping</div>
-      <a href="https://shopvetpets.com/products/freshwipes-kit-protects-against-dental-diseases" class="btn-cta">BUY 2 GET 2 + FREE GIFTS</a>
+      <a href="#" class="btn-cta direct-bundle">BUY 2 GET 2 + FREE GIFTS</a>
     </div>
   </div>
 
@@ -1829,7 +1830,13 @@ document.querySelectorAll('.direct-bundle').forEach(function(btn) {
       return res.json();
     })
     .then(function() {
-      window.location.href = '/?openCart=true';
+      const cartDrawer = document.querySelector('#CartDrawer');
+
+      if (cartDrawer && typeof cartDrawer.open === 'function') {
+  cartDrawer.open();
+} else {
+  document.dispatchEvent(new CustomEvent('cart:open'));
+}
     })
     .catch(function(err) {
       console.error(err);
@@ -1840,22 +1847,7 @@ document.querySelectorAll('.direct-bundle').forEach(function(btn) {
   });
 });
 </script>
-
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  if (window.location.search.includes('openCart=true')) {
-    setTimeout(function () {
-      var cartIcon =
-        document.querySelector('[aria-controls="CartDrawer"]') ||
-        document.querySelector('[data-cart-toggle]') ||
-        document.querySelector('a[href="/cart"]');
-
-      if (cartIcon) {
-        cartIcon.click();
-      }
-    }, 800);
-  }
-});
+  
 </script>
   
 </body>

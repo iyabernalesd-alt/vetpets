@@ -1682,7 +1682,9 @@
       <div class="offer-badge"><span class="check-icon">✔</span> Free Shipping</div>
       <div class="offer-badge"><span class="check-icon">✔</span> 35,000+ Happy Dogs</div>
     </div>
-    <a href="https://shopvetpets.com/products/freshwipes-kit-protects-against-dental-diseases" class="btn-cta">Check Availability →</a>
+    <a href="#" class="btn-cta direct-bundle">
+  Check Availability →
+</a>
     <div class="mini-reviews">
       <p>“No more fighting with my dog every night.” <span class="stars">★★★★★</span></p>
       <p>“I actually saw buildup on the wipe — it works.” <span class="stars">★★★★★</span></p>
@@ -1726,7 +1728,9 @@
   Give Your Dog the <span>Clean, Healthy Smile</span> They Deserve
 </h2>
     <p>35,000+ dog owners have already made FreshWipes part of their nightly routine. 30 seconds. Visible results in 2–3 weeks. 100 days to decide if it's right for you.</p>
-    <a href="https://shopvetpets.com/products/freshwipes-kit-protects-against-dental-diseases" class="btn-cta">Check Availability →</a>
+    <a href="#" class="btn-cta direct-bundle">
+  Check Availability →
+</a>
     <div class="guarantee-strip">
       <div class="guarantee-item"><span class="check-icon">✔</span> 100-Day Money-Back Guarantee</div>
       <div class="guarantee-item"><span class="check-icon">✔</span> Buy 2 Get 2 Free</div>
@@ -1797,5 +1801,53 @@
       }
     }
   </script>
+
+  <script>
+document.querySelectorAll('.direct-bundle').forEach(function(btn) {
+  btn.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    const originalText = btn.textContent;
+    btn.textContent = 'Adding...';
+    btn.style.pointerEvents = 'none';
+
+    const freshwipesId = 53021516005643;
+    const ebookId = 53039564816651;
+
+    fetch('/cart/add.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        items: [
+          { id: freshwipesId, quantity: 4 },
+          { id: ebookId, quantity: 1 }
+        ]
+      })
+    })
+    .then(() => {
+      btn.textContent = originalText;
+      btn.style.pointerEvents = '';
+
+      const cartBtn =
+        document.querySelector('[aria-controls="CartDrawer"]') ||
+        document.querySelector('[data-cart-toggle]') ||
+        document.querySelector('.header__icon--cart');
+
+      if (cartBtn) {
+        cartBtn.click();
+      } else {
+        window.location.href = '/cart';
+      }
+    })
+    .catch(err => {
+      console.error(err);
+      btn.textContent = originalText;
+      btn.style.pointerEvents = '';
+      window.location.href = '/cart';
+    });
+  });
+});
+</script>
+  
 </body>
 </html>
